@@ -1,0 +1,28 @@
+﻿@model Tutorials.ClientSideChangeTracking.UI.Models.EmployeeDropdownMenuViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<form action="employee/submit" method="post" id="EmpForm">
+
+    @Html.AntiForgeryToken()
+    @Html.LabelFor(m => m.Employees, new { id = "EmpFieldLabel" })
+    @Html.Hidden("EmpFieldName")
+    @Html.Hidden("DefaultEmpText")
+    @Html.Hidden("CurrentEmpText")
+    @Html.HiddenFor(m => m.DefaultEmpValue)
+    <br />
+    @Html.DropDownList("CurrentEmpValue",
+                new SelectList(Model.Employees, "Value", "Text", Model.DefaultEmpValue), null, new { @Name = "CurrentEmpValue"})
+    <br />
+    <input type="submit" id="saveChanges" />
+
+</form>
+
+<div id="ajaxContent">
+</div>
+@section Scripts {
+    <script src="~/js/jquery.employee.js"></script>
+}
