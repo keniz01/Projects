@@ -1,0 +1,11 @@
+﻿@model Tutorial.ChangeTrack.Clientside.MVC.Models.FormEditModel
+
+@if (Model.DefaultEmpValue != Model.CurrentEmpValue)
+{
+<div>
+    <span>You changed "@Model.CurrentEmpText" from "@Model.DefaultEmpText".</span>
+</div>
+}else
+{
+    <span>No change.</span>
+}
