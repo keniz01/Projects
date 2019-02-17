@@ -1,0 +1,33 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <header>Multiplication Table</header>
+    <content>
+        <h4>Times Table example</h4>
+        <div class="container" style="display:inline-block">
+            <div>
+                Enter a number: <input type="text" id="denominator">
+            </div>
+            <br />
+            <div class="timesTable" style="display:none;margin: auto 0">
+                <table border=1>
+                    <caption>Times Table</caption>
+                    <tbody class="tbody"></tbody>
+                </table>
+            </div>
+        </div>
+    </content>
+    <script src="~/js/libraries/jquery-3.3.1.js"></script>
+    <script src="~/js/jquery.calculator.js"></script>
+</body>
+</html>
